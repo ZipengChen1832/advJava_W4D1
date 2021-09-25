@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="list">
+        <h2>Available Classes</h2>
+        <ul>
+            <li *ngFor="let class of classes" (click)="display(class)">
+                <span>{{class.code}} | </span>
+                <span>{{class.name}} | </span>
+                <span>Units: {{class.units}}</span>
+                <!-- <div>Description: {{class.description}}</div> -->
+                <br>
+            </li>
+        </ul>
+    </div>
+
+    <div class="details" *ngIf="classToDisplay">
+        <h2>Course {{classToDisplay.code}} {{classToDisplay.name}}</h2>
+        <div>Description: {{classToDisplay.description}}</div>
+    
+    </div>
+
+
+</div>

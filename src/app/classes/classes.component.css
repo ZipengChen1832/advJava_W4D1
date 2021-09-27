@@ -15,3 +15,7 @@
     left: .1em;
 }
 
+#description {
+    width: 300px;
+    height: 150px;
+}

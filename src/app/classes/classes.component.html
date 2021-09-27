@@ -1,6 +1,7 @@
 <div class="container">
     <div class="list">
         <h2>Available Classes</h2>
+        <a routerLink="/homepage">Go back to homepage</a>
         <ul>
             <li *ngFor="let class of classes" (click)="display(class)">
                 <span>{{class.code}} | </span>
@@ -14,7 +15,17 @@
 
     <div class="details" *ngIf="classToDisplay">
         <h2>Course {{classToDisplay.code}} {{classToDisplay.name}}</h2>
-        <div>Description: {{classToDisplay.description}}</div>
+        <div>Description: {{classToDisplay.description}}</div><br><br>
+        
+        <label> Change course code: 
+            <input [(ngModel)]="classToDisplay.code" placeholder="code"/>
+        </label><br>
+        <label> Change course name: 
+            <input [(ngModel)]="classToDisplay.name" placeholder="name"/>
+        </label><br>
+        <label> Change course description: <br>
+            <textarea [(ngModel)]="classToDisplay.description" placeholder="description" id="description"></textarea>
+        </label><br>
     
     </div>
 
